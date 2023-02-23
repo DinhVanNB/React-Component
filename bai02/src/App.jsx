@@ -26,26 +26,22 @@ const dataStudent = [
 
 function App() {
     let elementTr = dataStudent.map((student,index) => 
-        <tr>
-          <Tabledata data={index+1}/>
-          <Tabledata data={student.name}/>
-          <Tabledata data={student.Age}/>
-          <Tabledata data={student.Address}/>
-        </tr>
+          <Tabledata key={index} stt={index+1}  data={student}/>
     );
   return (
-    <>
       <table>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Address</th>
-        </tr>
-        {elementTr}
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+         {elementTr}
+        </tbody>
       </table>
-      
-    </>
   );
 }
 
